@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 function CreateUser() {
   const [name, setName] = useState()
   const [surname, setSurname] = useState()
   const [email, setEmail] = useState()
-  // const [department, setDepartment] = useState()
+  const [department, setDepartment] = useState()
+  const navigate = useNavigate();
 
   const Submit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/createUser", {name, surname, email})
-    .then(result => console.log(result))
+    axios.post("http://localhost:3001/createUser", {name, surname, email, department})
+    .then(result => {
+      console.log(result)
+      navigate('/')
+    })
     .catch(err => console.log(err))
   }
 
@@ -42,35 +47,36 @@ function CreateUser() {
     </div>
   </div>
   <fieldset class="form-group">
-    <div class="row" onChange={onChangeValue}>
+  
+    <div class="row" > 
       <legend class="col-form-label col-sm-2 pt-0">Department</legend>
       <div class="col-sm-10">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="general" o />
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="general" onChange={(e) => setDepartment(e.target.value)}/>
           <label class="form-check-label" for="gridRadios1">
             General Dentistry
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="pediatric" />
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="pediatric" onChange={(e) => setDepartment(e.target.value)}/>
           <label class="form-check-label" for="gridRadios2">
             Pediatric Dentistry
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="restorative" />
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="restorative" onChange={(e) => setDepartment(e.target.value)}/>
           <label class="form-check-label" for="gridRadios2">
             Restorative Dentistry
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="surgery" />
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="surgery" onChange={(e) => setDepartment(e.target.value)}/>
           <label class="form-check-label" for="gridRadios2">
             Surgery
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="orthodontic" />
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="orthodontic" onChange={(e) => setDepartment(e.target.value)}/>
           <label class="form-check-label" for="gridRadios2">
             Orthodontics
           </label>
