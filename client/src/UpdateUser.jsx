@@ -4,9 +4,9 @@ import axios from 'axios'
 
 function UpdateUser() {
   const { id } = useParams()
-  const [name, setName] = useState()
-  const [surname, setSurname] = useState()
-  const [email, setEmail] = useState()
+  const [name, setName] = useState("")
+  const [surname, setSurname] = useState("")
+  const [email, setEmail] = useState("")
   const [department, setDepartment] = useState()
   const navigate = useNavigate();
 
@@ -31,6 +31,7 @@ const Update = (e) => {
     })
     .catch(err => console.log(err))
 }
+
 
   return (
     <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
@@ -62,7 +63,24 @@ const Update = (e) => {
   </div>
   <fieldset class="form-group">
     <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Department</legend>
+    <div class="col-md-4 mb-3">
+                <select
+                  type="text"
+                  id="department"
+                  class="custom-select"
+                  value={department}
+                  onChange={e => setDepartment(e.target.value)}
+                >
+                  <option selected>Department</option>
+                  <option value="general">General</option>
+                  <option value="pediatric">Pediatric</option>
+                  <option value="restorative">Restorative</option>
+                  <option value="surgery">Surgery</option>
+                  <option value="orthodontic">Orthodontic</option>
+                </select>
+  </div>
+
+      {/* <legend class="col-form-label col-sm-2 pt-0">Department</legend>
       <div class="col-sm-10">
         <div class="form-check">
           <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked />
@@ -94,8 +112,8 @@ const Update = (e) => {
             Orthodontics
           </label>
         </div>
-      </div>
-    </div>
+      </div>*/}
+    </div> 
   </fieldset>
 
   <div class="form-group row">
