@@ -1,0 +1,10 @@
+
+
+body {
+    background-image: url("Dentistry.png");
+    background-repeat: repeat;
+    /* background-color: black; */
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+  }
