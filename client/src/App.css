@@ -1,10 +1,76 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Play&family=Ubuntu:wght@300;400&display=swap');
+
 
 body {
-    background-image: url("Dentistry.png");
-    background-repeat: repeat;
-    /* background-color: black; */
-    padding: 40px;
-    font-family: Arial;
-    text-align: center;
-  }
+  background-image: url(/Users/abp06c/Desktop/crud-mern/client/src/assets/images/Dentistry.png);  
+   background-size:cover;
+   background-repeat:no-repeat;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  background-attachment: relative;
+  background-position: center;
+  
+  
+ 
+}
+
+.d-flex {
+  text-align: center;
+ 
+  background: rgba( 255, 255, 255, 0.3 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 2.5px );
+-webkit-backdrop-filter: blur( 6px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  
+  margin-right: auto;
+  margin-left: auto;
+
+  
+  justify-content: center;
+  
+ 
+
+
+}
+
+.center {
+  display: grid; 
+  place-items: center;
+  align-items: center;  
+  justify-content: center;
+  
+}
+
+
+.text-center {
+  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 3rem;
+  color: black;
+  font-weight: bold;
+  vertical-align: text-top;
+ 
+  
+ 
+}
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 3rem;
+  color: black;
+  font-weight: bold;
+  vertical-align: text-top;
+  
+ 
+}
+
+h2 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2.5rem;
+  color: black;
+  font-weight: bold;
+}
